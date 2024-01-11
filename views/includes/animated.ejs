@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WandeLust</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #000000 50%, #ffffff 50%);
+      color: #ff0000;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .intro-text {
+      font-size: 3.5em;
+      text-transform: uppercase;
+      letter-spacing: 10px;
+      font-weight: bold;
+      position: relative;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: introAnimation 1.5s forwards, glowAnimation 3s infinite alternate;
+    }
+
+    @keyframes introAnimation {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes glowAnimation {
+      0% {
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+      }
+      100% {
+        text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000;
+      }
+    }
+
+    .intro-text span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .intro-text span:nth-child(1) { animation-delay: 0.2s; }
+    .intro-text span:nth-child(2) { animation-delay: 0.4s; }
+    .intro-text span:nth-child(3) { animation-delay: 0.6s; }
+    .intro-text span:nth-child(4) { animation-delay: 0.8s; }
+    .intro-text span:nth-child(5) { animation-delay: 1s; }
+    .intro-text span:nth-child(6) { animation-delay: 1.2s; }
+    .intro-text span:nth-child(7) { animation-delay: 1.4s; }
+    .intro-text span:nth-child(8) { animation-delay: 1.6s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .intro-text {
+        font-size: 2em;
+        letter-spacing: 5px;
+      }
+    }
+
+    /* Button styles */
+    .button-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .button {
+      background-color: #ff0000;
+      color: #ffffff;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+  <form class="button-container" action="/listings">
+    <button class="button">Get Started</button>
+  </form>
+  
+  <div class="intro-text">
+    <span>W</span>
+    <span>A</span>
+    <span>N</span>
+    <span>D</span>
+    <span>E</span>
+    <span>R</span>
+    <span>L</span>
+    <span>U</span>
+    <span>S</span>
+    <span>T</span>
+  </div>
+
+  <script>
+    function loopBackground() {
+      setTimeout(function () {
+        document.body.style.background = 'linear-gradient(to bottom, #ffffff 50%, #000000 50%)';
+        setTimeout(function () {
+          document.body.style.background = 'linear-gradient(to bottom, #000000 50%, #ffffff 50%)';
+          loopBackground();
+        }, 1000);
+      }, 1000);
+    }
+
+    loopBackground();
+  </script>
+</body>
+</html>
+

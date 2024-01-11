@@ -1,60 +1,100 @@
 <style>
-  .btn-search{
-    background-color:  #fe424d;
+  .btn-search {
+    background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
     padding: 0 1rem 0 1rem;
   }
-  .btn-search:hover{
+  .btn-search:hover {
     background-color: #fff;
     color: #fe424d;
     border: 1px solid #fe424d;
     border-radius: 25px;
   }
 
-  .btn-search i{
+  .btn-search i {
     display: inline;
     margin-right: 0.5rem;
   }
-  .search-bar{
+  .search-bar {
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
     font-size: 1rem;
   }
+
+  
 </style>
 
+<nav class="navbar navbar-expand-sm bg-body-light border-bottom sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+    <button
+      class="navbar-toggler"
+      id="toggelButton"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon " id="menu-icon"><i class="fa-solid fa-bars" id="menu-icon"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <!-- <a style="font-weight: 500; color: red; padding-top: 1.5rem;">WanderLust</a> -->
 
-
-<nav class="navbar navbar-expand-sm bg-body-light  border-bottom sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav ">
-          <!-- <a style="font-weight: 500; color: red; padding-top: 1.5rem;">WanderLust</a> -->
-          <a class="nav-link" href="/listings"><h3 style=" color:  #fe424d; padding-right: 1.1rem;">All Listing</h3></a>
-          <!-- <a class="nav-link "  href="/">Home</a> -->
-          <!-- <a class="nav-link" href="/listings">All Listings</a> -->
-          <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
-        </div>
-        <div class="navbar-nav ms-auto">
-          <form class="d-flex" action="/listings/find" method="get">
-            <input class="form-control me-2 search-bar" type="search" placeholder="Search Destinations " name="searchbar" >
-            <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-          </form>
-        </div>
-        <div class="navbar-nav ms-auto">
-          <a class="nav-link" href="/listings/new">WanderLust Your Home</a>
-          <% if(!currUser){ %>
-          <a class="nav-link" href="/signup"><b style="color: red;">Sign Up</b></a>
-          <a href="/login" class="nav-link"><b>Log In</b></a>
-          <% } %>
-          <% if(currUser){%>
-          <a href="/logout" class="nav-link"><b style="color: red;">Log Out</b></a>
-          <%}%>
-        </div>
+        <a class="nav-link" href="/listings"
+          ><h3 style="color: #fe424d; padding-right: 1.1rem">All Listing</h3></a
+        >
+        <!-- <a class="nav-link "  href="/">Home</a> -->
+        <!-- <a class="nav-link" href="/listings">All Listings</a> -->
+        <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
       </div>
+      <div class="navbar-nav ms-auto">
+        <form class="d-flex" action="/listings/find" method="get">
+          <input
+            class="form-control me-2 search-bar"
+            type="search"
+            placeholder="Search Destination"
+            name="searchbar"
+          />
+          <button class="btn btn-search" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
+      <div class="navbar-nav ms-auto">
+        <!-- <label class="menu-icon" for="menu-btn" id="menu-icon"><span class="navicon" id="navicon"></span></label> -->
+        <!-- <ul class="menu" id="menu"> -->
+           <a class="nav-link" href="/listings/new">WanderLust (Add New)</a>
+        <% if(!currUser){ %>
+          <a class="nav-link" href="/signup"><b style="color: red">Sign Up</b></a>
+            <li> <a href="/login" class="nav-link"><b>Log In</b></a>
+        <% } %> <% if(currUser){%>
+           <a href="/logout" class="nav-link"><b style="color: red">Log Out</b></a>
+        <%}%>
+      <!-- </div> -->
+    <!-- </ul> -->
     </div>
-  </nav>
+  </div>
+</nav>
+<script>
+  // function mobileManu(){
+  //   if(document.getElementById('menu').style.display=='block'){
+  //     document.getElementById("menu").style.display='none';
+  //   }else{
+  //     document.getElementById("menu").style.display = 'block';
+  //   }
+  // }
+  // document.getElementById('navicon').addEventListener('click',mobileManu);
+
+  // function resetMenu(){
+  //   if (window.innerWidth>=900){
+  //     document.getElementById('menu').style.display='flex';
+  //   }else if(window.innerWidth<900){
+  //     document.getElementById('menu').style.display='none';
+  //   }
+  // }
+  // window.addEventListener('resize',resetMenu);
+
+
+</script>
+

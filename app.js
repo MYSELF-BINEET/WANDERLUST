@@ -20,6 +20,7 @@ const passport=require("passport");
 const LocalStrategy=require("passport-local");
 const User=require("./models/user.js");
 
+const favicon=require("serve-favicon");
 
 
 if(process.env.NODE_ENV !="production"){
@@ -79,6 +80,7 @@ const sessionOptions={
     httpOnly:true,
   }
 };
+
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -140,6 +142,8 @@ app.use(express.static(path.join(__dirname,'/public')));
 //   }
 
 // })
+app.use(favicon(path.join(__dirname,"public","favicon.ico")));
+
 
   // for listing route
 
@@ -153,9 +157,9 @@ app.use(express.static(path.join(__dirname,'/public')));
 // app.use((session()));
 
 
-// app.get('/', (req, res) => {
-//   res.send('root is working');
-// })
+app.get('/', (req, res) => {
+  res.render("includes/animated.ejs");
+})
 
 // app.get("/getdemouser",async(req,res)=>{
 //   let fakeUser=new User({
