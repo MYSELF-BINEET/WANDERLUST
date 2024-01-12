@@ -38,7 +38,9 @@ const dbUrl=process.env.ATLASDB_URL;
 // const mongoUrl='mongodb://127.0.0.1:27017/wanderlust';
 
 
-
+async function main() {
+  await mongoose.connect(dbUrl);
+}
 
 main()
 .then(()=>{
@@ -51,9 +53,7 @@ main()
 
 
 
-async function main() {
-  await mongoose.connect(dbUrl);
-}
+
 
 
 
