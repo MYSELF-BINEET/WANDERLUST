@@ -19,7 +19,7 @@ const listingControlller=require("../controllers/listings.js");
 
 const multer  = require('multer');
 const {storage}=require("../cloudConfig.js");
-const { route } = require("./listing.js");
+// const { route } = require("./listing.js");
 const upload = multer({storage});
 
 
